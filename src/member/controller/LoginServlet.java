@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import member.model.service.MemberService;
 
@@ -20,10 +21,28 @@ public class LoginServlet extends HttpServlet {
 		
 		String memberId = request.getParameter("member-id");
 		String memberPw = request.getParameter("member-pw");
+	
 		
 		MemberService mService = new MemberService();
 		int result = mService.selectCheckLogin(memberId, memberPw);
-		System.out.println(result);
+		
+		if(result>0) {
+			// session
+			HttpSession session = request.getSession();
+			session.setAttribute("memberId", memberId);
+			response.sendRedirect("/index.jsp");
+			
+//			request.setAttribute("memberId", memberId);
+//			RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
+//			view.forward(request, response);
+		} else {	    // 로그인 실패
+			request.setAttribute("title", "로그인 실패");
+			request.setAttribute("msg", "아이디와 비밀번호를 확인해주세요.");
+			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/member/error.jsp");
+			view.forward(request, response);
+		}
+		
+		
 		
 	}
 
