@@ -32,8 +32,8 @@
                     </li>
                     <li>				
                         <label for="gender">성별</label>    
-                        남<input type="radio" id="gender" name="member-gender" value="M" readonly <c:if test="${member.memberGender eq 'M' }">checked</c:if>>
-                        여<input type="radio" name="member-gender" value="F" readonly <c:if test="${member.memberGender eq 'F' }"> checked</c:if>>
+                        남<input type="radio" id="gender" name="member-gender" value="M" readonly onclick="return false" <c:if test="${member.memberGender eq 'M' }"> checked</c:if>>
+                        여<input type="radio" id="gender" name="member-gender" value="F" readonly onclick="return false" <c:if test="${member.memberGender eq 'F' }"> checked</c:if>>
                     </li>
                     <li>
                         <label for="email">이메일</label>
