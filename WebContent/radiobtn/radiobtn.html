@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>라디오 버튼</title>
+</head>
+<body>
+	<form action="/SuperBasicWeb/radioResult.do" method="get">
+		성별:
+		<label for="male">
+			<input type="radio" name="gender" id="male" value="M"> 남자
+		</label>
+		<label for="female">
+			<input type="radio" name="gender" id="female" value="F" checked> 여자 <br>
+		</label>
+		
+		메일정보 수신여부:
+		<label for="">
+			<input type="radio" name="chk-mail" id="" value="yes"> 수신
+		</label>
+		<label for="">
+			<input type="radio" name="chk-mail" id="" value="no" checked> 거부 <br>
+		</label>
+
+		<input type="submit" value="전송">
+		<input type="reset" value="초기화">
+	</form>
+
+</body>
+</html>
