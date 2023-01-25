@@ -35,7 +35,7 @@ public class UpdateServlet extends HttpServlet {
 		} else {
 			request.setAttribute("title", "정보 수정 실패");
 			request.setAttribute("msg", "회원 정보 수정을 실패했습니다.");
-			request.getRequestDispatcher("/WEB-INF/views/member/error.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(request, response);
 		}
 	}
 

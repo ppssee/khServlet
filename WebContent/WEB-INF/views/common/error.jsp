@@ -9,6 +9,6 @@
 <body>
 	<h1>${title }</h1>
 	<p>${msg }</p>
-	
+	<a href="/index.jsp"> 홈으로 이동 	</a>
 </body>
 </html>

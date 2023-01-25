@@ -1,0 +1,43 @@
+/* body{
+	width :1200px;
+	margin : 0 auto;
+} */
+form{
+	width : 1000px;
+
+}
+ul{
+	list-style-type : none;
+}
+
+ul li label {
+	width : 80px;
+	text-align: left;
+	float : left;
+}
+li {
+	margin : 10px;
+}
+.btn-area{
+	display : flex;
+	justify-content : space-evenly;
+}
+.btn-area > input{
+	margin-top : 8px;
+	width : 150px;
+	height : 40px;
+	text-align : center;
+	border : 1px solid #ccc;
+	background-color : #fafafa;
+	box-shadow : 1px 1px 1px #ccc;
+}
+
+/* 테이블 스타일 */
+table {
+	width: 1000px;
+	border : 1px solid black;
+	border-collapse: collapse;
+}
+th, td{
+	border : 1px solid red;
+}

@@ -38,8 +38,7 @@ public class LoginServlet extends HttpServlet {
 		} else {	    // 로그인 실패
 			request.setAttribute("title", "로그인 실패");
 			request.setAttribute("msg", "아이디와 비밀번호를 확인해주세요.");
-			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/member/error.jsp");
-			view.forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(request, response);
 		}
 		
 		

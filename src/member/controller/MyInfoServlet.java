@@ -23,7 +23,7 @@ public class MyInfoServlet extends HttpServlet {
 		} else { 	// id가 없을 때
 			request.setAttribute("title", "아이디로 조회 실패");
 			request.setAttribute("msg", "해당하는 데이터가 존재하지 않습니다.");
-			request.getRequestDispatcher("/WEB-INF/view/member/error.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(request, response);
 		}
 	}
 
