@@ -41,3 +41,7 @@ table {
 th, td{
 	border : 1px solid red;
 }
+
+.border-remove {
+	border : 0 solid black;
+}

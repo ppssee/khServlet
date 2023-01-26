@@ -27,9 +27,12 @@
 
 				</form>
 			</fieldset>
-			<span><a href="/member/enrollView.kh">회원가입구</a></span>
+			<span><a href="/member/enrollView.kh">회원가입</a></span>
 		</div>
 		</c:if>
+		
+		
+		
 		
 		<c:if test="${sessionScope.memberId ne null }">	
 		${sessionScope.memberId }님 환영합니다 <br>
@@ -38,7 +41,8 @@
 	    <a href="/member/myInfo.kh?member-id=${sessionScope.memberId }">마이페이지</a> 
 
 		<!-- 세션파괴는 서블릿에서 해야함. -->	    
-	    <a href="/member/logout.kh" >로그아웃음</a>  
+	    <a href="/member/logout.kh" >로그아웃</a>  
+	    
 	    <!-- javascript:void(0) a태그의 링크 기능 무효화 시킴. 클릭만 작동시키기 위해서. -->
 	    <a href="javascript:void(0);" onclick="removeCheck()">회원탈퇴</a> 	    
 	    
@@ -46,7 +50,7 @@
         
 	    <script>
         function removeCheck(){
-            if(confirm("회원탈퇴를 하시겠습니까마귀?")){
+            if(confirm("회원탈퇴를 하시겠습니까?")){
                 var memberId = document.querySelector("#member-id").value;
                 location.href ="/member/remove.kh?member-id="+memberId;
             }

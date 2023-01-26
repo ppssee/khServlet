@@ -14,7 +14,7 @@ public class NoticeService {
 		nDao = new NoticeDAO();
 	}
 	/**
-	 * 등록
+	 * 공지사항등록
 	 * @param notice
 	 * @return
 	 */
@@ -28,10 +28,39 @@ public class NoticeService {
 		}
 		return result;
 	}
+	/**
+	 * 공지사항 목록 조회
+	 * @return
+	 */
 	public List<Notice> selectAllNotice() {
 		Connection conn = JDBCTemplate.getConnection();
 		List<Notice> nList = nDao.selectAllNotice(conn);
 		return nList;
+	}
+	/**
+	 * 공지사항 상세 조회
+	 * @param noticeNo
+	 * @return
+	 */
+	public Notice selectOneByNo(int noticeNo) {
+		Connection conn = JDBCTemplate.getConnection();
+		Notice notice = nDao.selectOneByNo(conn, noticeNo);
+		return notice;
+	}
+	/**
+	 * 공지사항 삭제
+	 * @param noticeNo
+	 * @return
+	 */
+	public int deleteNotice(int noticeNo) {
+		Connection conn = JDBCTemplate.getConnection();
+		int result = nDao.deleteNotice(conn, noticeNo);
+		if(result > 0) {
+			JDBCTemplate.commit(conn);
+		} else {
+			JDBCTemplate.rollback(conn);
+		}
+		return result;
 	}
 
 }
