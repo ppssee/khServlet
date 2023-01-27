@@ -45,3 +45,9 @@ th, td{
 .border-remove {
 	border : 0 solid black;
 }
+a{
+	text-decoration: none;
+}
+
+
+
